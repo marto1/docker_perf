@@ -8,7 +8,7 @@ WORKDIR /app
 ADD requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+ONBUILD RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 ADD app.py /app/
 
