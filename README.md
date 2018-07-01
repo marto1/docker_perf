@@ -92,3 +92,6 @@ RUN apt-get update && apt-get install -y \
     ruby1.9.1-dev \
     s3cmd=1.1.* \
  && rm -rf /var/lib/apt/lists/*
+
+
+COPY is preferred to ADD

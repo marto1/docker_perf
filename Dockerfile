@@ -5,12 +5,12 @@ FROM python:2.7-slim
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-ADD requirements.txt /app/
+COPY requirements.txt /app/
 
 # Install any needed packages specified in requirements.txt
 ONBUILD RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-ADD app.py /app/
+COPY . /app/
 
 # Make port 80 available to the world outside this container
 EXPOSE 80
