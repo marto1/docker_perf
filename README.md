@@ -76,3 +76,19 @@ is compared against the checksum in the existing images. If anything
 has changed in the file(s), such as the contents and metadata, then
 the cache is invalidated.
 
+
+recommended RUN apt-get combo
+RUN apt-get update && apt-get install -y \
+    aufs-tools \
+    automake \
+    build-essential \
+    curl \
+    dpkg-sig \
+    libcap-dev \
+    libsqlite3-dev \
+    mercurial \
+    reprepro \
+    ruby1.9.1 \
+    ruby1.9.1-dev \
+    s3cmd=1.1.* \
+ && rm -rf /var/lib/apt/lists/*
