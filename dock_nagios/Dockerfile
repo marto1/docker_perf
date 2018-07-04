@@ -1,0 +1,4 @@
+FROM jasonrivers/nagios
+
+ENV NAGIOSADMIN_USER admin
+ENV NAGIOSADMIN_PASS nagi
