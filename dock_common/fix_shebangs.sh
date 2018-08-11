@@ -4,10 +4,10 @@ set -e
 PREFIX=/virt_common/bin/
 TARGET='"\/virt_common"' #escape for sed
 n1=$(awk '/set -gx VIRTUAL_ENV/ {print FNR}' ${PREFIX}activate.fish)
-sed -i "${n1}s/.*/set -gx VIRTUAL_ENV ${TARGET}/" ${PREFIX}activate.fish
 n2=$(awk '/^setenv VIRTUAL_ENV/ {print FNR}' ${PREFIX}activate.csh)
-sed -i "${n2}s/.*/setenv VIRTUAL_ENV ${TARGET}/" ${PREFIX}activate.csh
 n3=$(awk '/^VIRTUAL_ENV=/ {print FNR}' ${PREFIX}activate)
+sed -i "${n1}s/.*/set -gx VIRTUAL_ENV ${TARGET}/" ${PREFIX}activate.fish
+sed -i "${n2}s/.*/setenv VIRTUAL_ENV ${TARGET}/" ${PREFIX}activate.csh
 sed -i "${n3}s/.*/VIRTUAL_ENV=${TARGET}/" ${PREFIX}activate
 
 
