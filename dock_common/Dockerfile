@@ -1,10 +1,9 @@
-FROM sal:5000/daa/presto-origin
+FROM ubuntu:xenial
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# dependency for presto-server
 RUN apt-get update && \
-    apt-get install -y python && \
+    apt-get install -y python3 python3-dev && \
     apt-get autoremove --purge -y && \
     apt-get clean
 
