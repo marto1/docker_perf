@@ -9,3 +9,7 @@ RUN apt-get update && \
 
 
 COPY virt_common/ /virt_common
+COPY fix_shebangs.sh /fix_shebangs.sh
+
+# fix shebangs for venv's new place
+RUN /fix_shebangs.sh
